@@ -9,6 +9,17 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --color=auto'
 alias ipext='curl -s http://checkip.dyndns.org/ | grep -o '[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*.[0-9]*''
+alias ll="ls -l"
+alias lo="ls -o"
+alias lh="ls -lh"
+alias la="ls -la"
+alias sl="ls"
+alias l="ls"
+alias s="ls"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 PS1="\[\e[1;31m\][\[\e[1;33m\]\u\[\e[1;31m\]@\[\e[1;33m\]\H [\[\e[1;36m\]\t\[\e[1;33m\]] \[\e[1;32m\]\w\[\e[1;31m\]]\[\e[0m\] "
 
@@ -32,7 +43,6 @@ extract () {
        echo "'$1' is not a valid file!"
    fi
  }
-
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
