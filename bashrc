@@ -8,7 +8,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias grep='grep --color=auto'
-alias ipext='curl -s http://checkip.dyndns.org/ | grep -o '[0-9][0-9]*.[0-9][0-9]*.[0-9][0-9]*.[0-9]*''
+alias ipext='curl -s ipinfo.io/ip'
 alias ll="ls -l"
 alias lo="ls -o"
 alias lh="ls -lh"
