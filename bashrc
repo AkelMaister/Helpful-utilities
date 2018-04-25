@@ -21,6 +21,17 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    #alias dir='dir --color=auto'
+    #alias vdir='vdir --color=auto'
+
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
 PS1="\[\e[1;31m\][\[\e[1;33m\]\u\[\e[1;31m\]@\[\e[1;33m\]\H [\[\e[1;36m\]\t\[\e[1;33m\]] \[\e[1;32m\]\w\[\e[1;31m\]]\[\e[0m\]$ "
 
 extract () {
