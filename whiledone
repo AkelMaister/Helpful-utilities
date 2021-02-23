@@ -1,0 +1,28 @@
+#!/bin/bash
+
+CMD=$1
+RES=$2
+TRY=${3:-10}
+DELAY=${4:-0.2}
+i=0
+res=""
+if [[ -z "${CMD}" ]]; then
+  echo "RUN: ${0} <CMD> <RES> <COUNT> <TIMEOUT>"
+  echo "     CMD - command to run"
+  echo "     RES - Expected result"
+  echo "     COUNT - Count of successed results to exit"
+  echo "     TIMEOUT - timeout between tries"
+  exit 1
+fi
+
+while [[ "$res" != "$RES" ]] || [[ $i -lt $TRY ]]; do
+  res=$($CMD)
+  if [[ "$res" == "$RES" ]]; then
+    let i++
+    echo "OK $i"
+  else
+    i=0
+    echo "Not OK: $res"
+  fi
+  sleep $DELAY
+done
